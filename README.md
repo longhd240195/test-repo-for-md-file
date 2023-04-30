@@ -10,7 +10,7 @@ Student’s code: M22.ICT.003
 
 Email: linhntl.m22ict@usth.edu.vn
 
-Last updated date: 29/04/2023 
+Last updated date: 30/04/2023 
 
 ---
 
@@ -52,7 +52,7 @@ Last updated date: 29/04/2023
 
 ### 2. System Architecture
 
-![model1.png](image/model1.png)
+![model_1.png](image/model_1.png)
 
 For detail: 
 
@@ -75,21 +75,21 @@ For detail:
             - It boasts a large amount of memory, including both RAM and flash memory, enabling it to support more complex applications and data storage requirements.
             - It is an affordable option for hobbyists and developers when compared to other microcontrollers with similar capabilities.
         - Specification
-        
-        ![Untitled](image/Untitled.png)
-        
-        | Bandwidth | 72 MHz |
-        | --- | --- |
-        | Data Rate | 150 Mbps |
-        | Interface | Ethernet, I2C, I2S, SPI, UART |
-        | Max Frequency | 2.484 GHz |
-        | Max Operating Temperature | 85 °C |
-        | Max Supply Voltage | 3.6 V |
-        | Min Operating Temperature | -40 °C |
-        | Min Supply Voltage | 3 V |
-        | Nominal Supply Current | 500 mA |
-        | Number of ADC Channels | 16 |
-        | Number of GPIO | 32 |
+            
+            ![Untitled](image/Untitled.png)
+            
+            | Bandwidth | 72 MHz |
+            | --- | --- |
+            | Data Rate | 150 Mbps |
+            | Interface | Ethernet, I2C, I2S, SPI, UART |
+            | Max Frequency | 2.484 GHz |
+            | Max Operating Temperature | 85 °C |
+            | Max Supply Voltage | 3.6 V |
+            | Min Operating Temperature | -40 °C |
+            | Min Supply Voltage | 3 V |
+            | Nominal Supply Current | 500 mA |
+            | Number of ADC Channels | 16 |
+            | Number of GPIO | 32 |
     2. Sensor Humidity and temperatures: DHT11
         - DHT11 offers several advantages that make it a desirable choice
             - Low cost: The DHT11 sensor is an affordable option compared to other sensors with similar capabilities, making it an ideal choice for on a tight budget.
@@ -179,11 +179,19 @@ For detail:
             | Weight | 0.18kg/pc |
 2. Model: Data processing techniques.
     
+    ![Overall system](image/model_2.png)
+    
+    Overall system
+    
     When it comes to watering plants, research findings recommend doing so when the temperature is below 30 degrees Celsius and the humidity level is below 60%. Therefore, it is crucial to constantly monitor the temperature and humidity levels in the plant's environment to ensure that they receive the appropriate amount of water. Effective data processing techniques are necessary to achieve this goal and ensure the accuracy and reliability of humidity and temperature readings.
     
     One technique that can be used is setting thresholds for both humidity and temperature and filtering out any readings that fall outside of the desired range. This can help to refine data by removing irrelevant values and providing valuable insights to aid in decision-making. By discarding any readings that fall outside of the desired range, such as a temperature range of 20 to 35 degrees Celsius or a humidity range of 50% to 80%.
     
     To ensure that the temperature readings are accurate, it is important to take several measurements over a period of time and average the results. The number of readings to average can vary depending on the situation, but a common approach is to average the last 5 to 10 readings taken over a certain period of time, such as 5 to 10 minutes. This technique helps to reduce the effects of fluctuations in temperature and provides a more accurate representation of the environment's overall temperature.
+    
+    ![Data flow of system via filter and average techniques](image/model_3.png)
+    
+    Data flow of system via filter and average techniques
     
     In order to ensure the proper growth and health of plants, it is important to maintain appropriate levels of temperature and humidity in their environment. Monitoring these levels can be done using sensors that provide continuous readings, which can then be processed and analyzed to make informed decisions about watering schedules. However, it is possible for errors to occur with these sensors or with the communication of data to the central system.
     
@@ -193,18 +201,20 @@ For detail:
     
     Finally, in the event that the relay is unable to activate to open the water, the user will also receive a notification. This could be due to a variety of factors, such as a malfunctioning relay or a disruption in power or communication. By receiving these notifications, users can stay informed and take action to address any issues that may arise, ensuring that their plants remain healthy and properly watered.
     
-    ![board.png](image/board.png)
+3. Communication protocols
     
-    ![model2.png](image/model2.png)
+    Connecting an ESP and a mobile application via HTTP over Wi-Fi provides a reliable and efficient means of communication. The ESP serves as a web server that can respond to HTTP requests sent by the mobile application. By using HTTP, the mobile application can easily send commands or receive data from the ESP. The Wi-Fi connection provides a stable and fast communication channel between the two devices, ensuring that data is transmitted quickly and accurately. This type of connection is commonly used in IoT applications, where the ESP acts as a control center for various sensors and devices, and the mobile application provides an interface for users to monitor and control these devices remotely. Overall, using HTTP over Wi-Fi offers a practical and effective solution for connecting an ESP and a mobile application in an IoT environment.
     
 
 ---
 
 ## IV. Testing and Validation
 
-Code on the sharing github: 
+Simulation code on the github: 
 
-- Code connection of DTH11 vs ESP32, simulate watering job, just need to log data
+- Get the temperature and humidity information from DTH11 to ESP32
+- Use the information to turn on or off the pump automatically
+- Display result
 
 ---
 
